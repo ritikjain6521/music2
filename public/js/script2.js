@@ -77,7 +77,6 @@ async function displayallbums(){
   
 let a = await fetch(`/jainsongs/`)
 let response = await a.text();
-console.log(div)
 let div = document.createElement("div")
 div.innerHTML = response;
 let anchors = div.getElementsByTagName("a")
