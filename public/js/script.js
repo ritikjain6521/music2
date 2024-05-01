@@ -25,7 +25,7 @@ console.log(secondsToMinutesSeconds(-5)); // Output: "Invalid input"
 
 async function getSongs(folder){
    currFolder = folder;
-   let a = await fetch(`http://127.0.0.1:5500/public/${folder}/`)
+   let a = await fetch(`/public/${folder}/`)
     let response = await a.text();
     console.log(response) 
     let div = document.createElement("div")
@@ -86,7 +86,7 @@ async function getSongs(folder){
 
    async function displayallbums(){
   
-    let a = await fetch(`http://127.0.0.1:5500/public/jainsongs/`)
+    let a = await fetch(`/public/jainmusic/`)
     let response = await a.text();
     let div = document.createElement("div")
     div.innerHTML = response;
@@ -98,7 +98,7 @@ async function getSongs(folder){
     if(e.href.includes("/jainsongs/") && !e.href.includes(".htaccess")){
  
     let folder= e.href.split("/").slice(-1)[0]
-     let a = await fetch(`/jainsongs/${folder}/info.json`)
+     let a = await fetch(`/jainmusic/${folder}/info.json`)
     let response = await a.json();
     console.log(response)
 
@@ -109,7 +109,7 @@ async function getSongs(folder){
              <path d="M15.4531 12.3948C15.3016 13.0215 14.5857 13.4644 13.1539 14.3502C11.7697 15.2064 11.0777 15.6346 10.5199 15.4625C10.2893 15.3913 10.0793 15.2562 9.90982 15.07C9.5 14.6198 9.5 13.7465 9.5 12C9.5 10.2535 9.5 9.38018 9.90982 8.92995C10.0793 8.74381 10.2893 8.60868 10.5199 8.53753C11.0777 8.36544 11.7697 8.79357 13.1539 9.64983C14.5857 10.5356 15.3016 10.9785 15.4531 11.6052C15.5156 11.8639 15.5156 12.1361 15.4531 12.3948Z" stroke="currentColor" fill="#000"stroke-width="1.5" stroke-linejoin="round" />
          </svg>
  </div>
-     <img src="/jainsongs/${folder}/cover.jpg" alt="">
+     <img src="/jainmusic/${folder}/cover.jpg" alt="">
      <h2>${response.title}</h2>
      <p> ${response.description}</p>             
 </div>    
@@ -227,7 +227,7 @@ document.querySelector(".volume>img").addEventListener("click", e=>{
    Array.from (document.getElementsByClassName("card")).forEach(e=>{
     e.addEventListener("click", async item=>{
 
-        songs = await getSongs(`jainsongs/${item.currentTarget.dataset.floder}`)
+        songs = await getSongs(`jainmusic/${item.currentTarget.dataset.floder}`)
 
         playMusic(songs[0])
         
