@@ -85,7 +85,7 @@ async function getSongs(folder){
   // Display the allbums
 
    async function displayallbums(){
-   let a = await fetch(`/${folder}/`)
+   let a = await fetch(`/public/jainsongs/`)
     let response = await a.text();
   
     let div = document.createElement("div")
