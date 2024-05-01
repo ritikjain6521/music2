@@ -85,7 +85,6 @@ async function getSongs(folder){
   // Display the allbums
 
    async function displayallbums(){
-       currFolder = folder;
    let a = await fetch(`/${folder}/`)
     let response = await a.text();
   
