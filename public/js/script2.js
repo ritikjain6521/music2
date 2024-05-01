@@ -19,7 +19,7 @@ function secondsToMinutesSeconds(seconds) {
 
 async function getSongs(folder) {
     currFolder = folder;
-    let a = await fetch(`/ritikjain6521/music2/tree/master/public/${folder}`)
+    let a = await fetch(`/${folder}/`)
     let response = await a.text();
     let div = document.createElement("div")
     div.innerHTML = response;
@@ -75,8 +75,9 @@ const playMusic = (track, pause = false) => {
 
 async function displayallbums(){
   
-let a = await fetch(`/ritikjain6521/music2/tree/master/public/jainsongs`)
+let a = await fetch(`/jainsongs/`)
 let response = await a.text();
+console.log(div)
 let div = document.createElement("div")
 div.innerHTML = response;
 let anchors = div.getElementsByTagName("a")
@@ -87,10 +88,10 @@ let cardContainer = document.querySelector(".cardContainer")
  for (let index = 0; index < array.length; index++) {
     const e = array[index];
 if(e.href.includes("/jainsongs/")){
-let folder =e.href.split("/").slice(-1)[0]
+let folder =e.href.split("/").slice(4)[0]
   console.log(e.href)
 
-let a = await fetch(`http://127.0.0.1:5500/public/jainsongs/${folder}/info.json`)
+let a = await fetch(`/jainsongs/${folder}/info.json`)
 let response = await a.json();
 console.log(response)
 
