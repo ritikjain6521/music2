@@ -25,7 +25,7 @@ console.log(secondsToMinutesSeconds(-5)); // Output: "00:00"
 
 async function getSongs(folder){
    currFolder = folder;
-   let a = await fetch(`/${folder}/`)
+   let a = await fetch(`ritikjain6521/music2/public/${folder}`)
     let response = await a.text();
     console.log(response) 
     let div = document.createElement("div")
@@ -98,7 +98,7 @@ async function getSongs(folder){
      
  async function main(){
  
-      await getSongs("jainsongs/ncs")
+      await getSongs("ritikjain6521/music2/public/jainsongs/cs")
     playMusic(songs[0],true)
 
     await displayallbums()
