@@ -93,12 +93,12 @@ async function getSongs(folder){
     let anchors = div.getElementsByTagName("a")
     let cardContainer = document.querySelector(".cardContainer")
   let array = Array.from(anchors)
+     console.log(e.href)
       for (let index = 0; index < array.length; index++) {
         const e = array[index];    
     if(e.href.includes("/jainsongs/") && !e.href.includes(".htaccess")){
  
     let folder= e.href.split("/").slice(4)[0]
-     let a = await fetch(`/jainsongs/${folder}/info.json`)
     let response = await a.json();
     console.log(response)
 
