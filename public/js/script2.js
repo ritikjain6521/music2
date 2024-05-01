@@ -19,7 +19,7 @@ function secondsToMinutesSeconds(seconds) {
 
 async function getSongs(folder) {
     currFolder = folder;
-    let a = await fetch(`https://music2-h0yy.onrender.com/${folder}/`)
+    let a = await fetch(`/ritikjain6521/music2/tree/master/public/${folder}`)
     let response = await a.text();
     let div = document.createElement("div")
     div.innerHTML = response;
@@ -75,7 +75,7 @@ const playMusic = (track, pause = false) => {
 
 async function displayallbums(){
   
-let a = await fetch(`https://music2-h0yy.onrender.com/jainsongs/`)
+let a = await fetch(`/ritikjain6521/music2/tree/master/public/jainsongs`)
 let response = await a.text();
 let div = document.createElement("div")
 div.innerHTML = response;
