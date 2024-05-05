@@ -98,7 +98,7 @@ async function getSongs(folder){
     if(e.href.includes("/jainsongs/") && !e.href.includes(".htaccess")){
  
     let folder= e.href.split("/").slice(-1)[0]
-     let a = await fetch(`/jainsongs/${folder}/info.json`)
+    let a = await fetch(`/jainsongs/${folder}/info.json`);
     let response = await a.json();
     console.log(response)
 
