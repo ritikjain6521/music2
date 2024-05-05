@@ -25,7 +25,7 @@ console.log(secondsToMinutesSeconds(-5)); // Output: "Invalid input"
 
 async function getSongs(folder){
    currFolder = folder;
-       let a = await fetch(`http://127.0.0.1:5500/public/${folder}/`)
+       let a = await fetch(`http://127.0.0.1:5502/public/${folder}/`)
 
     let response = await a.text();
     console.log(response) 
@@ -86,7 +86,7 @@ async function getSongs(folder){
   // Display the allbums
 
    async function displayallbums(){
-    let a = await fetch(`http://127.0.0.1:5500/public/jainsongs/`)
+    let a = await fetch(`http://127.0.0.1:5502/public/jainsongs/`)
     let response = await a.text();
     let div = document.createElement("div")
     div.innerHTML = response;
