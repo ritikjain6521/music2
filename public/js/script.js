@@ -93,7 +93,7 @@ async function getSongs(folder){
     for (let index = 0; index < array.length; index++) {
         const e = array[index];
         if (e.href.includes("/jainsongs/") && !e.href.includes(".htaccess")) {
-            folder = e.href.split("/").slice(-1)[0];
+            folder = e.href.split("/").slice(4)[0];
             // Fetch album info using folder variable
             let a = await fetch(`/jainsongs/${folder}/info.json`);
             let response = await a.json();
