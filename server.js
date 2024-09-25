@@ -7,9 +7,9 @@ const knex = require('knex');
 const db = knex({
     client: 'pg',
     connection: {
-        host: 'dpg-comiofsf7o1s73f58400-a',
-        user: 'postgresql_ritik_user',
-        password: 'TGabXCb5wqNuneTDqtk8WKJ37XVcI00A',
+        host: 'dpg-crncrvo8fa8c738dmct0-a',
+        user: 'postgresql_ritik_7yv3_user',
+        password: 'RK9ZkE7vJlWbNDfsB09cJJv5T80uJ5GT',
         database: 'postgresql_ritik'
     }
 })
