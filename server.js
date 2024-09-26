@@ -10,7 +10,7 @@ const db = knex({
         host: 'dpg-crncrvo8fa8c738dmct0-a',
         user: 'postgresql_ritik_7yv3_user',
         password: 'RK9ZkE7vJlWbNDfsB09cJJv5T80uJ5GT',
-        database: 'postgresql_ritik'
+        database: 'postgresql_ritik_7yv3'
     }
 })
 
